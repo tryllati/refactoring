@@ -1,0 +1,18 @@
+{
+    "name": "tryllati/billingo",
+    "description": "test task of billingo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tullner Attila",
+            "email": "tullner.ati@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+	"autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
