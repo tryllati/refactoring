@@ -12,6 +12,13 @@ class Command implements CommandInterface
         $this->consoleInputBag = new ConsoleInputBag($inputs);
     }
 
+    /*Előbb Collection
+    public function paramater(int $number): mixed
+    {
+        return $this->consoleInputBag->paramater();
+    }
+    */
+
     public function parametersIsEqualOrDie(int $numberOfParameters, string $errorMessage = null): void
     {
         if($this->consoleInputBag->numberOfParameters() != $numberOfParameters) {
@@ -20,7 +27,7 @@ class Command implements CommandInterface
                 ? 'BaZzInGA!'
                 : $errorMessage;
 
-            exit(1);
+            exit();
         }
     }
 }

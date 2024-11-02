@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Components\Console;
 
-use App\Components\Console\ConsoleCommandInterface;
-
 class Console implements ConsoleCommandInterface
 {
     protected Command $command;

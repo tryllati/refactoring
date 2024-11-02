@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Components\Console;
 
+// Át kell alakítani collectionné
 class ConsoleInputBag implements ConsoleInputBagInterface
 {
     private array $parameters;
