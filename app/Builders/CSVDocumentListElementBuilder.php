@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Builder;
+namespace App\Builders;
 
 use App\Components\DocumentList\DocumentListElement;
 use App\Components\Partner\Partner;

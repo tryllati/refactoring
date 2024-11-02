@@ -2,9 +2,9 @@
 
 require './bootstrap.php';
 
-use App\Builder\CSVDocumentListElementBuilder;
+use App\Builders\CSVDocumentListElementBuilder;
 use App\Components\Console\Console;
-use app\Components\DocumentList\DocumentListElement;
+use App\Components\DocumentList\DocumentListElement;
 use App\Components\File\Csv\CSVFile;
 
 const DOCUMENT_NAME = 'document_list.csv';
