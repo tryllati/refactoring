@@ -15,17 +15,10 @@ $console->command()->parametersIsEqualOrDie(4, 'Ambiguous number of parameters!'
 try{
     $csvFile = new CSVFile(DOCUMENT_NAME);
 
-    $csvFileElements = $csvFile->read();
-    $csvFileHeader   = $csvFileElements->header();
+    $documentType = $console->command()->parameter(1);
+    $partnerId    = $console->command()->parameter(2);
 
-/*
-    var_dump($csvFileHeader);
-    var_dump($csvFileElements->withoutHeader());
-*/
-
-    $a = 1; // be kell hozni az inputokat
-
-    $csvDocumentListElements = $csvFileElements->withoutHeader()
+    $selectedCSVDocumentListElements = $csvFile->read()->withoutHeader()
         ->map(fn($element) => (new CSVDocumentListElementBuilder())
             ->setId($element[0])
             ->setType($element[1])
@@ -34,14 +27,15 @@ try{
             ->get()
         )
         ->filter(
-            function(DocumentListElement $element) use ($a) {
-                $partnerId = is_null($element->partner()) ? null : $element->partner()->id();
+            function(DocumentListElement $element) use ($documentType, $partnerId) {
+                $partner_id = is_null($element->partner()) ? null : $element->partner()->id();
 
-                return $a == $partnerId;
+                return $partnerId == $partner_id &&
+                       $documentType == $element->type()->value;
             }
         )->all();
 
-   var_dump($csvDocumentListElements);
+   var_dump($selectedCSVDocumentListElements);
 }
 catch(Exception $e)
 {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Components\File\Csv;
 
 use App\Enums\CsvDocumentElementTypeEnum;
-use App\Support\Collection\Collection;
+use App\Support\Collection\CollectionInterface;
 
 interface DocumentListElementInterface
 {
@@ -21,7 +21,7 @@ interface DocumentListElementInterface
 
     public function setPartner(null|Partner $partner): self;
 
-    public function items(): Collection;
+    public function items(): CollectionInterface;
 
-    public function setItems(Collection $items): self;
+    public function setItems(CollectionInterface $items): self;
 }

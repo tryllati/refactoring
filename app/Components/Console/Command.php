@@ -4,24 +4,25 @@ declare(strict_types=1);
 
 namespace App\Components\Console;
 
+use App\Support\Collection\Collection;
+use App\Support\Collection\CollectionInterface;
+
 class Command implements CommandInterface
 {
-    protected ConsoleInputBag $consoleInputBag;
+    protected CollectionInterface $consoleInputBag;
 
     public function __construct(array $inputs = []) {
-        $this->consoleInputBag = new ConsoleInputBag($inputs);
+        $this->consoleInputBag = new Collection($inputs);
     }
 
-    /*Előbb Collection
-    public function paramater(int $number): mixed
+    public function parameter(int $number): mixed
     {
-        return $this->consoleInputBag->paramater();
+        return $this->consoleInputBag->get($number);
     }
-    */
 
     public function parametersIsEqualOrDie(int $numberOfParameters, string $errorMessage = null): void
     {
-        if($this->consoleInputBag->numberOfParameters() != $numberOfParameters) {
+        if($this->consoleInputBag->count() != $numberOfParameters) {
 
             echo is_null($errorMessage)
                 ? 'BaZzInGA!'

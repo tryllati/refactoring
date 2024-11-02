@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Components\File\csv;
 
 use App\Enums\CsvDocumentElementTypeEnum;
-use App\Support\Collection\Collection;
+use App\Support\Collection\CollectionInterface;
 use App\Traits\IdTrait;
 
 class DocumentListElement implements DocumentListElementInterface
@@ -14,7 +14,7 @@ class DocumentListElement implements DocumentListElementInterface
 
     private CsvDocumentElementTypeEnum $type;
     private null|Partner $partner;
-    private Collection $items;
+    private CollectionInterface $items;
 
     public function type(): CsvDocumentElementTypeEnum
     {
@@ -40,12 +40,12 @@ class DocumentListElement implements DocumentListElementInterface
         return $this;
     }
 
-    public function items(): Collection
+    public function items(): CollectionInterface
     {
         return $this->items;
     }
 
-    public function setItems(Collection $items): self
+    public function setItems(CollectionInterface $items): self
     {
         $this->items = $items;
 

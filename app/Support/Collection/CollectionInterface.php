@@ -6,7 +6,6 @@ namespace App\Support\Collection;
 
 use Countable;
 use IteratorAggregate;
-use Traversable;
 
 interface CollectionInterface extends Countable, IteratorAggregate
 {
@@ -15,8 +14,6 @@ interface CollectionInterface extends Countable, IteratorAggregate
     public function add($item): static;
 
     public function all(): array;
-
-    public function count(): int;
 
     public function isEmpty(): bool;
 
@@ -31,6 +28,4 @@ interface CollectionInterface extends Countable, IteratorAggregate
     public function filter(callable $callback = null): static;
 
     public static function where($array, callable $callback): array;
-
-    public function getIterator(): Traversable;
 }

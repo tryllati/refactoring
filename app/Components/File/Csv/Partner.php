@@ -7,7 +7,7 @@ namespace App\Components\File\csv;
 use App\Traits\IdTrait;
 use App\Traits\NameTrait;
 
-class Partner
+class Partner implements PartnerInterface
 {
     use IdTrait, NameTrait;
 }
