@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Components\File\csv;
+namespace App\Components\File\Csv;
 
 use App\Enums\CsvDocumentElementTypeEnum;
 use App\Support\Collection\CollectionInterface;

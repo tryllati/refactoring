@@ -5,7 +5,7 @@ require './bootstrap.php';
 use App\Components\Console\Console;
 use App\Builder\CSVDocumentListElementBuilder;
 use App\Components\File\Csv\CSVFile;
-use App\Components\File\csv\DocumentListElement;
+use App\Components\File\Csv\DocumentListElement;
 
 const DOCUMENT_NAME = 'document_list.csv';
 
