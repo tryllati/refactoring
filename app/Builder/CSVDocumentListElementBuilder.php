@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Builder;
 
-use App\Components\File\Csv\DocumentListElement;
-use App\Components\File\Csv\Partner;
-use App\Components\File\Csv\PartnerItem;
+use App\Components\DocumentList\DocumentListElement;
+use App\Components\Partner\Partner;
+use App\Components\Partner\PartnerItem;
 use App\Enums\CsvDocumentElementTypeEnum;
 use App\Support\Collection\Collection;
 

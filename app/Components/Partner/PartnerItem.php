@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Components\File\Csv;
+namespace App\Components\Partner;
 
 use App\Traits\NameTrait;
 
-class PartnerItem
+class PartnerItem implements PartnerItemInterface
 {
     use NameTrait;
 
-    private int $unitPrice; // kell egy price osztály?? nagyon muszáj?
+    private int $unitPrice;
     private int $quantity;
 
     public function unitPrice(): int

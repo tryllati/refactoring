@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Components\File\Csv;
+namespace App\Components\DocumentList;
 
+use App\Components\Partner\Partner;
 use App\Enums\CsvDocumentElementTypeEnum;
 use App\Support\Collection\CollectionInterface;
 use App\Traits\IdTrait;

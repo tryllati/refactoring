@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Components\File\Csv;
+namespace App\Components\Partner;
 
 use App\Traits\IdTrait;
 use App\Traits\NameTrait;
