@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Components\Console\Template;
 
 use App\Components\DocumentList\DocumentListElement;
+use App\Support\Str\Str;
 
 final class DocumentListElementConsoleTemplate extends ConsoleTemplate
 {
@@ -27,31 +28,31 @@ final class DocumentListElementConsoleTemplate extends ConsoleTemplate
     private function printHeader(): void
     {
         foreach ($this->header as $tag) {
-            $this->strPad($tag, $this->padLength);
+            Str::strPad($tag, $this->padLength);
         }
 
-        $this->break();
+        Str::break();
     }
 
     private function printHeaderUnderline(): void
     {
         foreach ($this->header as $tag) {
-            $this->strRepeat($this->lineCharacter, $this->padLength);
+            Str::strRepeat($this->lineCharacter, $this->padLength);
         }
 
-        $this->break();
+        Str::break();
     }
 
     private function printDocument(): void
     {
         foreach ($this->documents as $document) {
 
-            $this->strPad((string) $document->id(), $this->padLength);
-            $this->strPad($document->type()->value, $this->padLength);
-            $this->strPad((is_null($document->partner()) ? '' : $document->partner()->name()), $this->padLength);
-            $this->strPad((string) $document->itemsTotalPrice(), $this->padLength);
+            Str::strPad((string) $document->id(), $this->padLength);
+            Str::strPad($document->type()->value, $this->padLength);
+            Str::strPad((is_null($document->partner()) ? '' : $document->partner()->name()), $this->padLength);
+            Str::strPad((string) $document->itemsTotalPrice(), $this->padLength);
 
-            $this->break();
+            Str::break();
         }
     }
 }
