@@ -17,6 +17,7 @@ try{
 
     $documentType = $console->command()->parameter(1);
     $partnerId    = $console->command()->parameter(2);
+    $minimumPrice = $console->command()->parameter(3);
 
     $selectedCSVDocumentListElements = $csvFile->read()->withoutHeader()
         ->map(fn($element) => (new CSVDocumentListElementBuilder())
@@ -27,13 +28,14 @@ try{
             ->get()
         )
         ->filter(
-            function(DocumentListElement $element) use ($documentType, $partnerId) {
+            function(DocumentListElement $element) use ($documentType, $partnerId, $minimumPrice) {
                 $partner_id = is_null($element->partner()) ? null : $element->partner()->id();
 
-                return $partnerId == $partner_id &&
-                       $documentType == $element->type()->value;
+                return $partnerId    == $partner_id &&
+                       $documentType == $element->type()->value &&
+                       $minimumPrice < $element->itemsTotalPrice();
             }
-        )->all();
+        );
 
    var_dump($selectedCSVDocumentListElements);
 }
@@ -41,3 +43,5 @@ catch(Exception $e)
 {
     echo $e->getMessage();
 }
+
+$console->output()->print('message');

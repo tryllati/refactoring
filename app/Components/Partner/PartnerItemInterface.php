@@ -15,4 +15,6 @@ interface PartnerItemInterface extends NameInterface
     public function quantity(): int;
 
     public function setQuantity(int $quantity): self;
+
+    public function price(): int;
 }

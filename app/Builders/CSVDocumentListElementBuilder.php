@@ -52,7 +52,7 @@ final class CSVDocumentListElementBuilder
     {
         $partnerItems = new Collection();
 
-        if(!empty($partner)) {
+        if(!empty($items)) {
 
             foreach ($items as $item) {
                 $partnerItem = new PartnerItem();

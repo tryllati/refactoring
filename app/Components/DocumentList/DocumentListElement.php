@@ -41,6 +41,9 @@ class DocumentListElement implements DocumentListElementInterface
         return $this;
     }
 
+    /**
+     * Collection contain PartnerItem classes
+     */
     public function items(): CollectionInterface
     {
         return $this->items;
@@ -51,5 +54,17 @@ class DocumentListElement implements DocumentListElementInterface
         $this->items = $items;
 
         return $this;
+    }
+
+    public function itemsTotalPrice(): int
+    {
+        $totalPrice = 0;
+
+        foreach($this->items as $item){
+
+            $totalPrice += $item->price();
+        }
+
+        return $totalPrice;
     }
 }

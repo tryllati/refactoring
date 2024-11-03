@@ -36,4 +36,9 @@ class PartnerItem implements PartnerItemInterface
 
         return $this;
     }
+
+    public function price(): int
+    {
+        return $this->unitPrice * $this->quantity;
+    }
 }

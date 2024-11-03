@@ -25,4 +25,6 @@ interface DocumentListElementInterface
     public function items(): CollectionInterface;
 
     public function setItems(CollectionInterface $items): self;
+
+    public function itemsTotalPrice(): int;
 }

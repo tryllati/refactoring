@@ -24,9 +24,11 @@ class Command implements CommandInterface
     {
         if($this->consoleInputBag->count() != $numberOfParameters) {
 
-            echo is_null($errorMessage)
+            $message = is_null($errorMessage)
                 ? 'BaZzInGA!'
                 : $errorMessage;
+
+            ConsoleOutput::print($message);
 
             exit();
         }
