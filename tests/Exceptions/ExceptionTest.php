@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class ExceptionTest extends TestCase
 {
-    public function testFileNotFound()
+    public function testFileNotFound(): void
     {
         $this->expectException(FileNotFoundException::class);
 

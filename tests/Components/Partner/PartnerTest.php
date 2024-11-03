@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class PartnerTest extends TestCase
 {
-    public function testPartner()
+    public function testPartner(): void
     {
         $partner = new Partner();
 

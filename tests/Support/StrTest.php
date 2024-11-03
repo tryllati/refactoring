@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class StrTest extends TestCase
 {
-    public function testStrPad()
+    public function testStrPad(): void
     {
         $text = 'lorem';
         $length = 20;
@@ -18,7 +18,7 @@ class StrTest extends TestCase
         $this->expectOutputString(str_pad($text, $length));
     }
 
-    public function testStrRepeat()
+    public function testStrRepeat(): void
     {
         $text = 'lorem';
         $length = 10;

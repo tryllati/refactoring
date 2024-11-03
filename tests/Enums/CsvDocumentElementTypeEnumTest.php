@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class CsvDocumentElementTypeEnumTest extends TestCase
 {
-    public function testFileNotFound()
+    public function testFileNotFound(): void
     {
         $typeEnum = CsvDocumentElementTypeEnum::tryFrom('invoice');
         $this->assertEquals(CsvDocumentElementTypeEnum::INVOICE->value, $typeEnum->value);

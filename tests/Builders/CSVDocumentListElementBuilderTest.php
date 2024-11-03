@@ -14,7 +14,7 @@ use PHPUnit\Framework\TestCase;
 
 class CSVDocumentListElementBuilderTest extends TestCase
 {
-    public function testCSVDocumentListElementBuilder()
+    public function testCSVDocumentListElementBuilder(): void
     {
         $builder = new CSVDocumentListElementBuilder();
 
