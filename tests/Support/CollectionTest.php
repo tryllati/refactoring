@@ -16,14 +16,14 @@ class CollectionTest extends TestCase
         $this->collection = new Collection(['database','lorem ipsum']);
     }
 
-    public function testCollectionGet()
+    public function testCollectionGet(): void
     {
         $this->assertIsString($this->collection->get(0));
         $this->assertEquals('database', $this->collection->get(0));
         $this->assertEquals('lorem ipsum', $this->collection->get(1));
     }
 
-    public function testCollectionInstance()
+    public function testCollectionInstance(): void
     {
         $this->assertInstanceOf(Collection::class, $this->collection);
         $this->assertInstanceOf(Collection::class, Collection::make());
