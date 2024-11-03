@@ -4,6 +4,7 @@ require './bootstrap.php';
 
 use App\Builders\CSVDocumentListElementBuilder;
 use App\Components\Console\Console;
+use App\Components\Console\Template\DocumentListElementConsoleTemplate;
 use App\Components\DocumentList\DocumentListElement;
 use App\Components\File\Csv\CSVFile;
 
@@ -29,19 +30,19 @@ try{
         )
         ->filter(
             function(DocumentListElement $element) use ($documentType, $partnerId, $minimumPrice) {
-                $partner_id = is_null($element->partner()) ? null : $element->partner()->id();
 
-                return $partnerId    == $partner_id &&
+                return $partnerId    == (is_null($element->partner()) ? null : $element->partner()->id()) &&
                        $documentType == $element->type()->value &&
                        $minimumPrice < $element->itemsTotalPrice();
             }
         );
 
-   var_dump($selectedCSVDocumentListElements);
+    $console->output()
+        ->printByTemplate(
+            new DocumentListElementConsoleTemplate($selectedCSVDocumentListElements->all())
+        );
 }
 catch(Exception $e)
 {
-    echo $e->getMessage();
+    $console->output()->print($e->getMessage());
 }
-
-$console->output()->print('message');

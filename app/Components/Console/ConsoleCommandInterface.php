@@ -6,5 +6,7 @@ namespace App\Components\Console;
 
 interface ConsoleCommandInterface
 {
-    public function command(): CommandInterface;
+    public function parameter(int $number): mixed;
+
+    public function parametersIsEqualOrDie(int $numberOfParameters, string $errorMessage = null): void;
 }

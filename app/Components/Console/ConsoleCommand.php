@@ -7,7 +7,7 @@ namespace App\Components\Console;
 use App\Support\Collection\Collection;
 use App\Support\Collection\CollectionInterface;
 
-class Command implements CommandInterface
+class ConsoleCommand implements ConsoleCommandInterface
 {
     protected CollectionInterface $consoleInputBag;
 
