@@ -10,7 +10,7 @@ use App\Components\Partner\PartnerItem;
 use App\Enums\CsvDocumentElementTypeEnum;
 use App\Support\Collection\Collection;
 
-final class CSVDocumentListElementBuilder
+final class CSVDocumentListElementBuilder extends Builder
 {
     private DocumentListElement $documentListElement;
 
