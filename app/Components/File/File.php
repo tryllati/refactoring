@@ -20,7 +20,7 @@ abstract class File implements FileInterface
         return $this->filename;
     }
 
-    public function setFilename($filename): static
+    public function setFilename(string $filename): static
     {
         $this->filename = $filename;
 

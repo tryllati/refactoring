@@ -28,4 +28,6 @@ interface CollectionInterface extends Countable, IteratorAggregate
     public function filter(callable $callback = null): static;
 
     public static function where($array, callable $callback): array;
+
+    public function get($key, $default = null): mixed;
 }

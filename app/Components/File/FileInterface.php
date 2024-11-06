@@ -8,7 +8,7 @@ interface FileInterface
 {
     public function filename(): string;
 
-    public function setFilename($filename): static;
+    public function setFilename(string $filename): static;
 
     public function path(): string;
 
