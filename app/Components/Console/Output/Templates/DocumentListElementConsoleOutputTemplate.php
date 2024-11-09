@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Components\Console\Template;
+namespace App\Components\Console\Output\Templates;
 
+use App\Components\Console\Output\ConsoleOutputTemplate;
 use App\Components\DocumentList\DocumentListElement;
 use App\Support\Str\Str;
 
-final class DocumentListElementConsoleTemplate extends ConsoleTemplate
+final class DocumentListElementConsoleOutputTemplate extends ConsoleOutputTemplate
 {
     private array $header = ['document_id', 'document_type','partner name', 'total'];
     private string $lineCharacter = '=';

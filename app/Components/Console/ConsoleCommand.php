@@ -20,6 +20,11 @@ class ConsoleCommand implements ConsoleCommandInterface
         return $this->consoleInputBag->get($number);
     }
 
+    public function parameters(): CollectionInterface
+    {
+        return $this->consoleInputBag;
+    }
+
     public function parametersIsEqualOrDie(int $numberOfParameters, string $errorMessage = null): void
     {
         if($this->consoleInputBag->count() != $numberOfParameters) {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Components\Console;
 
-use App\Components\Console\Template\ConsoleTemplateInterface;
+use App\Components\Console\Output\ConsoleOutputTemplateInterface;
 
 class ConsoleOutput implements ConsoleOutputInterface
 {
@@ -13,7 +13,7 @@ class ConsoleOutput implements ConsoleOutputInterface
         echo($message);
     }
 
-    public static function printByTemplate(ConsoleTemplateInterface $template): void
+    public static function printByTemplate(ConsoleOutputTemplateInterface $template): void
     {
         $template->handle();
     }

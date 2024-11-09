@@ -4,21 +4,19 @@ require './bootstrap.php';
 
 use App\Builders\CSVDocumentListElementBuilder;
 use App\Components\Console\Console;
-use App\Components\Console\Template\DocumentListElementConsoleTemplate;
+use App\Components\Console\Output\Templates\DocumentListElementConsoleOutputTemplate;
+use App\Components\Console\Parameter\ParameterTemplateFactory;
 use App\Components\DocumentList\DocumentListElement;
 use App\Components\File\Csv\CSVFile;
-
-const DOCUMENT_NAME = 'document_list.csv';
 
 $console = new Console($argv);
 $console->command()->parametersIsEqualOrDie(4, 'Ambiguous number of parameters!');
 
 try{
-    $csvFile = new CSVFile(DOCUMENT_NAME);
+    $documentListParameterTemplate = ParameterTemplateFactory::make()
+        ->documentListParameterTemplate($console->command()->parameters());
 
-    $documentType = $console->command()->parameter(1);
-    $partnerId    = $console->command()->parameter(2);
-    $minimumPrice = $console->command()->parameter(3);
+    $csvFile = new CSVFile($documentListParameterTemplate::FILENAME);
 
     $selectedCSVDocumentListElements = $csvFile->read()->withoutHeader()
         ->map(fn($element) => (new CSVDocumentListElementBuilder())
@@ -29,17 +27,17 @@ try{
             ->get()
         )
         ->filter(
-            function(DocumentListElement $element) use ($documentType, $partnerId, $minimumPrice) {
+            function(DocumentListElement $element) use ($documentListParameterTemplate) {
 
-                return $partnerId    == (is_null($element->partner()) ? null : $element->partner()->id()) &&
-                       $documentType == $element->type()->value &&
-                       $minimumPrice < $element->itemsTotalPrice();
+                return $documentListParameterTemplate->partnerId()    == (is_null($element->partner()) ? null : $element->partner()->id()) &&
+                       $documentListParameterTemplate->documentType() === $element->type() &&
+                       $documentListParameterTemplate->minimumPrice() < $element->itemsTotalPrice();
             }
         );
 
     $console->output()
         ->printByTemplate(
-            new DocumentListElementConsoleTemplate($selectedCSVDocumentListElements->all())
+            new DocumentListElementConsoleOutputTemplate($selectedCSVDocumentListElements->all())
         );
 }
 catch(Exception $e)
