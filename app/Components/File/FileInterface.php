@@ -18,7 +18,7 @@ interface FileInterface
 
     public function fullPath(): string;
 
-    public function read(): CsvDataCollectionInterface;
+    public function read();
 
     public function fileExist(): bool;
 

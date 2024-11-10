@@ -11,4 +11,6 @@ interface CSVFileInterface extends FileInterface
     public function separator(): string;
 
     public function setSeparator(string $separator): static;
+
+    public function read(): CsvDataCollectionInterface;
 }
