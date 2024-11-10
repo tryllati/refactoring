@@ -7,13 +7,10 @@ namespace App\Components\DocumentList;
 use App\Components\Partner\Partner;
 use App\Enums\CsvDocumentElementTypeEnum;
 use App\Support\Collection\CollectionInterface;
+use App\Traits\IdInterface;
 
-interface DocumentListElementInterface
+interface DocumentListElementInterface extends IdInterface
 {
-    public function id(): int;
-
-    public function setId(int $id): self;
-
     public function type(): CsvDocumentElementTypeEnum;
 
     public function setType(CsvDocumentElementTypeEnum $type): self;

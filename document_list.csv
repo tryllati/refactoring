@@ -11,3 +11,4 @@ id;document_type;partner;items
 10;invoice;{"id":1, "name": "Kovács József"};[{"name":"dinnye","unit_price":10000, "quantity":3}, {"name":"szilva","unit_price":4000, "quantity":3}]
 11;invoice;{"id":354, "name": "Nagy Béla"};[{"name":"körte","unit_price":15000, "quantity":3}]
 12;invoice;{"id":354, "name": "Nagy Béla"};[{"name":"alma","unit_price":5000, "quantity":5}, {"name":"körte","unit_price":15000, "quantity":1}]
+13;receipt;{"id":1, "name": "Kovács József"};[{"name":"alma","unit_price":5000, "quantity":5}]
