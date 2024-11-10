@@ -33,7 +33,7 @@ class CSVFile extends File implements CSVFileInterface
     /**
      * @throws FileNotFoundException
      */
-    public function read(): CsvDataCollection
+    public function read(): CsvDataCollectionInterface
     {
         if(! $this->fileExist()) {
             throw new FileNotFoundException('File not found! ('. $this->fullPath() .')');

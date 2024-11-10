@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Components\File\Csv;
 
-interface CSVFileInterface
+use App\Components\File\FileInterface;
+
+interface CSVFileInterface extends FileInterface
 {
     public function separator(): string;
 

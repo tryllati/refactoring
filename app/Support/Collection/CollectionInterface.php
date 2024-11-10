@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App\Support\Collection;
 
+use App\Traits\MakeAbleInterface;
 use Countable;
 use IteratorAggregate;
 
-interface CollectionInterface extends Countable, IteratorAggregate
+interface CollectionInterface extends Countable, IteratorAggregate, MakeAbleInterface
 {
-    public static function make(array $items = []): static;
-
     public function add($item): static;
 
     public function all(): array;

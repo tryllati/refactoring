@@ -4,20 +4,18 @@ declare(strict_types=1);
 
 namespace App\Support\Collection;
 
+use App\Traits\MakeAbleTrait;
 use Traversable;
 
 class Collection implements CollectionInterface
 {
+    use MakeAbleTrait;
+
     protected array $items = [];
 
     public function __construct(array $items = [])
     {
         $this->items = $items;
-    }
-
-    public static function make(array $items = []): static
-    {
-        return new static($items);
     }
 
     public function add($item): static

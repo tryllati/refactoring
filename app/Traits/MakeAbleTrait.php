@@ -6,10 +6,10 @@ namespace App\Traits;
 
 trait MakeAbleTrait
 {
-    public static function make(mixed $parameters = null): self
+    public static function make(mixed $parameters = null): static
     {
         return is_null($parameters)
-            ? new self($parameters)
-            : new self();
+            ? new static()
+            : new static($parameters);
     }
 }

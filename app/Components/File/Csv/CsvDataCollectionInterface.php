@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Components\File\Csv;
 
-interface CsvDataCollectionInterface
+use App\Support\Collection\CollectionInterface;
+
+interface CsvDataCollectionInterface extends CollectionInterface
 {
     public function headerElement(int $number): false|string;
 

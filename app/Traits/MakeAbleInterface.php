@@ -6,5 +6,5 @@ namespace App\Traits;
 
 interface MakeAbleInterface
 {
-    public static function make(mixed $parameters = null): self;
+    public static function make(mixed $parameters = null): static;
 }

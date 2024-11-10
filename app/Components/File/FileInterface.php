@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Components\File;
 
+use App\Components\File\Csv\CsvDataCollectionInterface;
+
 interface FileInterface
 {
     public function filename(): string;
@@ -16,7 +18,7 @@ interface FileInterface
 
     public function fullPath(): string;
 
-    public function read();
+    public function read(): CsvDataCollectionInterface;
 
     public function fileExist(): bool;
 
