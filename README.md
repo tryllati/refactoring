@@ -1,4 +1,4 @@
-# Billingo
+# Refactoring
 Teszt feladat
 
 A feladat alapján a kapott document_list.php fájl került refaktorálásra. 
