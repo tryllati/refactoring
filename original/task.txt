@@ -1,0 +1,28 @@
+Task
+
+The focus of the task is to refactor a fictitious code. The attached code (document_list.php) lists the data in document_list.csv according to the filter
+conditions.
+
+Filter parameters
+● Document type
+● Customer ID
+● Minimum amount value
+
+Example
+php document_list.php invoice 1 12500
+
+
+
+--- original hungarian ---
+Feladat
+A feladat fókusza egy fiktív kód refaktorálása. A csatolt kód (document_list.php) szűrési
+feltételek szerint listázza document_list.csv-ben található adatokat.
+
+
+Szűrési paraméterek
+● Bizonylat típus
+● Vevő azonosító
+● Bizonylat minimum szumma értéke
+
+Példa
+php document_list.php invoice 1 12500
