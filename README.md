@@ -5,9 +5,9 @@ The focus of the task is to refactor a fictitious code. The attached code (docum
 conditions.
 
 Filter parameters
-● Document type
-● Customer ID
-● Minimum amount value
+- Document type
+- Customer ID
+- Minimum amount value
 
 Example
 php document_list.php invoice 1 12500
